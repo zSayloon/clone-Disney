@@ -1,31 +1,42 @@
 @use 'variaveis';
 
-.shows{
+.shows {
     padding: 2vw 5.6vw;
+    min-height: 50vw;
 
-    &__list{
+    &__list {
         margin-top: 44px;
-        display: none;        
+        display: none;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 24px;
 
-        &--active{
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        &--active {
             display: grid;
         }
 
-        &__item{
-            img{
+        &__item {
+            img {
                 max-width: 100%;
                 border-radius: 4px;
             }
         }
     }
 
-    &__tabs{
+    &__tabs {
         display: flex;
         justify-content: center;
 
-        &__button{
+        @media (max-width: 768px) {
+            white-space: nowrap;
+            overflow-x: scroll;
+            padding-left: 20px;
+        }
+
+        &__button {
             color: variaveis.$colorTextSecundario;
             font-size: 20px;
             border: none;
@@ -36,8 +47,12 @@
             margin: 0 1vw;
             cursor: pointer;
 
-            &--active{
+            &--active {
                 border-bottom: 5px solid variaveis.$colorTextSecundario;
+            }
+
+            @media (max-width: 768px) {
+                font-size: 16px;
             }
 
         }
